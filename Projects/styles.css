@@ -1,0 +1,10 @@
+body {
+  background-color: #f1c50e ; /* Using a hex color code */
+    color: white; /* Using the color keyword */
+  font-family: Arial, sans-serif; /* Using a generic font family */
+  margin: 10px;
+  padding: 10px;
+  a:link {
+  color:  rgb(83, 175, 228); /* Sets unvisited links to blue */
+  }
+}
