@@ -1,5 +1,5 @@
 body {
-  background-color: #f1c50e ; /* Using a hex color code */
+  background-color: #000000 ; /* Using a hex color code */
     color: white; /* Using the color keyword */
   font-family: Arial, sans-serif; /* Using a generic font family */
   margin: 10px;
@@ -8,7 +8,18 @@ body {
   color: rgb(83, 175, 228); /* Sets unvisited links to blue */
   }
   p {
-  font-size: 16px;
+  font-size: 14px; /*Accessibility ftw*/
+  }
+  /* For links too*/
+  a {
+  font-size: 14px;
+  }
+  li {
+  font-size: 14px;
+  }
+  a:hover {
+  color: red; /* Sets links to red when hovered over */
+  font-size: 14px;
   }
   
 }
