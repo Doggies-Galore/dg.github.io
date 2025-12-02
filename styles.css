@@ -1,25 +1,108 @@
+:root {
+  --page-bg: #000000;
+  --page-fg: #ffffff;
+  --accent: #53afe4;
+  --header-bg: rgba(255,255,255,0.04);
+  --btn-bg: rgba(255,255,255,0.06);
+  --btn-fg: var(--page-fg);
+}
+
+/* Basic page layout */
+html, body {
+  height: 100%;
+}
+
 body {
-  background-color: #000000 ; /* Using a hex color code */
-    color: white; /* Using the color keyword */
-  font-family: Arial, sans-serif; /* Using a generic font family */
+  background-color: var(--page-bg);
+  color: var(--page-fg);
+  font-family: Arial, sans-serif;
   margin: 10px;
   padding: 10px;
-  a:link {
-  color: rgb(83, 175, 228); /* Sets unvisited links to blue */
-  }
-  p {
-  font-size: 14px; /*Accessibility ftw*/
-  }
-  /* For links too*/
-  a {
-  font-size: 14px;
-  }
-  li {
-  font-size: 14px;
-  }
-  a:hover {
-  color: red; /* Sets links to red when hovered over */
-  font-size: 14px;
-  }
-  
+  transition: background-color 200ms ease, color 200ms ease;
 }
+
+/* Header */
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+  background: var(--header-bg);
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.site-title {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.header-controls {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+button, input[type="color"] {
+  background: var(--btn-bg);
+  color: var(--btn-fg);
+  border: 1px solid rgba(255,255,255,0.06);
+  padding: 0.4rem 0.6rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button:hover {
+  filter: brightness(1.08);
+}
+
+/* Links and text sizes */
+a:link {
+  color: var(--accent);
+}
+
+p, li, a {
+  font-size: 14px;
+}
+
+a:hover { color: red; }
+
+/* Dark mode overrides */
+.dark-mode {
+  --page-bg: #0b0b0d;
+  --page-fg: #E6EEF8;
+  --header-bg: rgba(255,255,255,0.02);
+  --btn-bg: rgba(255,255,255,0.03);
+}
+
+/* Small utility */
+.sr-only { position: absolute; left: -9999px; }
+
+/* Footer and image theming */
+.site-footer {
+  display: flex;
+  gap: 1rem;
+  justify-content: space-around;
+  align-items: center;
+  padding: 1rem;
+  background: var(--page-bg);
+  color: var(--page-fg);
+  border-radius: 8px;
+}
+
+.footer-card {
+  text-align: center;
+  background: color-mix(in srgb, var(--page-bg) 85%, transparent);
+  padding: 0.5rem;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.04);
+}
+
+.themed-img {
+  display: block;
+  background: var(--page-bg);
+  /* Add a subtle inset so light images get a frame on dark backgrounds and vice versa */
+  box-shadow: 0 0 0 6px var(--page-bg) inset, 0 2px 6px rgba(0,0,0,0.25);
+  border-radius: 6px;
+}
+
